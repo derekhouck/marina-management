@@ -1,0 +1,7 @@
+require: rubocop-rails
+
+Metrics/BlockLength:
+  Max: 1000
+
+Style/Documentation:
+  Enabled: false
