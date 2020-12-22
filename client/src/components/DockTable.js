@@ -15,6 +15,7 @@ const DockTable = () => {
       {docks.map(d => (
         <div>
           <h2>{d.name}</h2>
+          <p>Boat: {d.boat ? d.boat.name : 'none'}</p>
         </div>
       ))}
     </div>

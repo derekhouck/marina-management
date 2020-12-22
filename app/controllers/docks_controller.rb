@@ -1,11 +1,11 @@
 class DocksController < ApplicationController
-  before_action :set_dock, only: [:show, :update, :destroy]
+  before_action :set_dock, only: %i[show update destroy]
 
   # GET /docks
   def index
     @docks = Dock.all
 
-    render json: @docks
+    render json: @docks, include: ['boat']
   end
 
   # GET /docks/1
@@ -39,13 +39,14 @@ class DocksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dock
-      @dock = Dock.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def dock_params
-      params.require(:dock).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_dock
+    @dock = Dock.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def dock_params
+    params.require(:dock).permit(:name)
+  end
 end
