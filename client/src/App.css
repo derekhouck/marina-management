@@ -28,6 +28,25 @@
 }
 
 .dock-table {
+  color: #888;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.has-boat {
+  color: #333;
+}
+
+.boat-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.boat-list li {
+  margin: 1rem;
 }

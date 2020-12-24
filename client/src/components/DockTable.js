@@ -1,25 +1,25 @@
 import React, {useEffect, useState} from 'react';
 
 const DockTable = () => {
-  const [docks, setDocks] = useState([])
+  const [docks, setDocks] = useState([]);
 
   useEffect(() => {
     if (docks.length === 0) 
       fetch('/docks')
         .then( res => res.json())
         .then(data => setDocks(data));
-  }, [docks])
+  }, [docks]);
 
   return (
-    <div className="dock-table">
+    <ol className="dock-table">
       {docks.map(d => (
-        <div>
+        <li className={d.boat ? 'has-boat' : ''}>
           <h2>{d.name}</h2>
           <p>Boat: {d.boat ? d.boat.name : 'none'}</p>
-        </div>
+        </li>
       ))}
-    </div>
-  )
-}
+    </ol>
+  );
+};
 
-export default DockTable
+export default DockTable;
