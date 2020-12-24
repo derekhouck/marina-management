@@ -8,6 +8,11 @@ export const addBoat = data =>
   })
     .then(res => res.json());
 
+export const deleteBoat = boatId => 
+  fetch(`/boats/${boatId}`, {
+    method: 'DELETE'
+  });
+
 export const getBoats = () => fetch('/boats')
   .then(res => res.json());
 
