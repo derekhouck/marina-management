@@ -18,3 +18,13 @@ export const getBoats = () => fetch('/boats')
 
 export const getDocks = () => fetch('/docks')
   .then( res => res.json());
+
+export const updateBoat = ({boatId, dockId}) => 
+  fetch(`/boats/${boatId}`, {
+    body: JSON.stringify({ boat: { dock_id: dockId }}),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'PUT'
+  })
+    .then(res => res.json());

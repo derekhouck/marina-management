@@ -47,6 +47,11 @@
   padding: 0;
 }
 
+.boat-list button {
+  display: block;
+  margin: 1rem auto;
+}
+
 .boat-list li {
   margin: 1rem;
 }

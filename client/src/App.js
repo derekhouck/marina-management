@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 
-import {addBoat, deleteBoat, getBoats, getDocks} from './actions';
+import {addBoat, deleteBoat, getBoats, getDocks, updateBoat} from './actions';
 
 import DockTable from './components/DockTable';
 import BoatList from './components/BoatList';
@@ -28,6 +28,17 @@ function App() {
   const boatFormSubmission = data => 
     addBoat(data)
       .then(boat => setBoats([...boats, boat]));
+  
+  const dockBoat = data => 
+    updateBoat(data)
+      .then(boat => {
+        setDocks(docks.map(d => {
+        if (d.id === boat.dock_id)
+          d.boat = boat;
+        return d;
+        }))
+        setBoats(boats.filter(b => b.id !== boat.id))
+    });
 
   const scuttleBoat = boatId => 
     deleteBoat(boatId)
@@ -41,7 +52,7 @@ function App() {
       <AddBoatForm onBoatSubmission={boatFormSubmission}/>
       <DockTable docks={docks} />
       <h2>Undocked Boats</h2>
-      <BoatList boats={boats} scuttleBoat={scuttleBoat} />
+      <BoatList boats={boats} docks={docks.filter(d => !d.boat)} dockBoat={dockBoat} scuttleBoat={scuttleBoat} />
     </div>
   );
 }
