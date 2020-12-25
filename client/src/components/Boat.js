@@ -7,7 +7,7 @@ const Boat = ({boat, dockBoat, docks, scuttleBoat}) => {
     e.preventDefault();
     dockBoat({boatId: boat.id, dockId: dock})
   };
-  const handleChange = e => setDock(e.target.value);
+  const handleChange = e => setDock(e.target.value); // sets select value
   const handleScuttle = () => scuttleBoat(boat.id);
 
   return (

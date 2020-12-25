@@ -1,24 +1,28 @@
-# README
+# Marina Management
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running the app
 
-Things you may want to cover:
+1. Clone the repo: `git clone git@github.com:derekhouck/marina-management.git`
+1. Go to the app: `cd marina-management`
+1. Install the dependencies: `bundle install`
+1. Create the databases: `rake db:create`
+1. (Optional) Seed the database: `rake db:seed`
+1. Start Rails server: `rails s -p 3001`
+1. Start React app:
+   - `cd client`
+   - `yarn install`
+   - `yarn start`
+1. If the app doesn't open automatically, go to http://localhost:3000/
 
-* Ruby version
+## What I'd implement if I had more time
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Better styling, of course
+- Responsiveness
+- Scopes for undocked boats and unused docks
+- Make including the boats in the docks get optional
+- Conditional boat styling based on boat color
+- Front end tests
+- Dock reassignment without undocking
+- Batch boat creation/scuttling
+- Live marina updates 
+- User accounts/permissions

@@ -1,4 +1,5 @@
 const AddBoatForm = ({onBoatSubmission}) => {
+  // would probably refactor this to be a controlled component
   let name, color, length;
   const submit = e => {
     e.preventDefault();

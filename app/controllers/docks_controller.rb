@@ -5,7 +5,7 @@ class DocksController < ApplicationController
   def index
     @docks = Dock.all
 
-    render json: @docks, include: ['boat']
+    render json: @docks, include: ['boat'] # for including boat names in the dock table
   end
 
   # GET /docks/1
