@@ -6,7 +6,7 @@
 1. Go to the app: `cd marina-management`
 1. Install the dependencies: `bundle install`
 1. Create the databases: `rake db:create`
-1. (Optional) Seed the database: `rake db:seed`
+1. Seed the database: `rake db:seed`
 1. Start Rails server: `rails s -p 3001`
 1. Start React app:
    - `cd client`
