@@ -43,6 +43,17 @@ function App() {
   const scuttleBoat = boatId => 
     deleteBoat(boatId)
       .then(() => setBoats(boats.filter(b => b.id !== boatId)));
+  
+  const undockBoat = boat => 
+    updateBoat({boatId: boat.id, dockId: ''})
+      .then(() => {
+        setDocks(docks.map(d => {
+          if (d.boat && d.boat.id === boat.id)
+            d.boat = null;
+          return d;
+        }))
+        setBoats([...boats, boat])
+      });
 
   return (
     <div className="App">
@@ -50,7 +61,7 @@ function App() {
         <h1>Marina Management</h1>
       </header>
       <AddBoatForm onBoatSubmission={boatFormSubmission}/>
-      <DockTable docks={docks} />
+      <DockTable docks={docks} undockBoat={undockBoat} />
       <h2>Undocked Boats</h2>
       <BoatList boats={boats} docks={docks.filter(d => !d.boat)} dockBoat={dockBoat} scuttleBoat={scuttleBoat} />
     </div>
