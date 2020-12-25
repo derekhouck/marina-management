@@ -16,6 +16,9 @@
 
 ## What I'd implement if I had more time
 
+- Loading states
+- Better error handling
+- Add Foreman to simplify app startup
 - Better styling, of course
 - Responsiveness
 - Scopes for undocked boats and unused docks
