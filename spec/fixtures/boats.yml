@@ -1,0 +1,12 @@
+test_boat:
+  id: 1
+  name: Test Boat
+  color: yellow and black
+  length: 67
+  dock_id: 3
+
+undocked:
+  id: 2
+  name: Undocked Boat
+  color: grey
+  length: 83

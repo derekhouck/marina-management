@@ -1,0 +1,15 @@
+dock1:
+  id: 1
+  name: Dock 1
+
+dock2:
+  id: 2
+  name: Dock 2
+
+dock3:
+  id: 3
+  name: Dock 3
+
+dock4:
+  id: 4
+  name: Dock 4
