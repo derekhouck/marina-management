@@ -14,6 +14,12 @@
    - `yarn start`
 1. If the app doesn't open automatically, go to http://localhost:3000/
 
+## Running Cypress
+
+1. Start Rails server: `CYPRESS=1 bin/rails server -p 3001`
+2. Start React app: `cd client && yarn start`
+3. Start Cypress: `yarn cypress open`
+
 ## What I'd implement if I had more time
 
 - Loading states
